@@ -4,31 +4,31 @@
 using namespace std;
 int main(){
 	
-	vector <int> manu{1, 3, 5, 7};
-	vector <int> ferral{1, 2, 4, 6};
-	vector <int> fusion;
-	int i=0;
-	int j=0;
-	while (i < manu.size() && j < ferral.size()) {
-        if (manu[i] < ferral[j]) {
-            fusion.push_back(manu[i]);
-            i++;
+	vector <int> lista1{1, 3, 5, 7};
+	vector <int> lista2{1, 2, 4, 6};
+	vector <int> listaFusionada;
+	int indice1=0;
+	int indice2=0;
+	while (indice1 < lista1.size() && indice2 < lista2.size()) {
+        if (lista1[indice1] < lista2[indice2]) {
+            listaFusionada.push_back(lista1[indice1]);
+            indice1++;
         } else {
-            fusion.push_back(ferral[j]);
-            j++;
+            listaFusionada.push_back(lista2[indice2]);
+            indice2++;
         }
     }
-    while (i < manu.size()) {
-        fusion.push_back(manu[i]);
-        i++;
+    while (indice1 < lista1.size()) {
+        listaFusionada.push_back(lista1[indice1]);
+        indice1++;
     }	
-    while (j < ferral.size()) {
-        fusion.push_back(ferral[j]);
-        j++;
+    while (indice2 < lista2.size()) {
+        listaFusionada.push_back(lista2[indice2]);
+        indice2++;
     }
     
     cout << "Vector fusionado: ";
-    for (int x : fusion) {
+    for (int x : listaFusionada) {
         cout << x << " ";
     }
     cout << endl;
